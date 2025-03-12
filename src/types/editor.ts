@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export interface EditorProps {
   noteId: string;
-  guid: string;
+  guid?: string;
   initialContent: string;
 }
 

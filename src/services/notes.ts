@@ -1,5 +1,4 @@
 import { supabase } from '../lib/supabase';
-import type { Note } from '../types';
 import { nanoid } from 'nanoid';
 
 
@@ -50,9 +49,9 @@ export async function updateNoteTitle(guid: string, title: string) {
     .eq('guid', guid);
 }
 
-export async function updateNoteContent(guid: string, content: string) {
+export async function updateNoteContent(id: string, content: string) {
   return await supabase
     .from('notes')
     .update({ content })
-    .eq('guid', guid);
+    .eq('id', id);
 }
